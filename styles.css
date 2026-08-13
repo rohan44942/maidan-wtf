@@ -125,6 +125,12 @@ body {
   }
 }
 
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
 .online {
   display: inline-flex;
   align-items: center;
@@ -161,6 +167,30 @@ body {
 
 .muted {
   opacity: 0.7;
+}
+
+.share {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.4rem 0.75rem 0.4rem 0.55rem;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+}
+
+.share:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.share.is-copied span {
+  min-width: 3.2rem;
 }
 
 main {

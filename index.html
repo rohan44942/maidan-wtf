@@ -3,11 +3,42 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Maidan — 15 August</title>
+    <title>15 August Nostalgia</title>
     <meta
       name="description"
       content="Before fancy functions. You once stood in the school maidan. White uniforms. Girls dancing. The whole village watching."
     />
+    <meta name="theme-color" content="#FF9933" />
+    <meta name="keywords" content="15 August, Independence Day, nostalgia, tiranga, school function, India" />
+    <link rel="canonical" href="https://15-august-nostalgia.vercel.app/" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="15 August Nostalgia" />
+    <meta property="og:title" content="15 August Nostalgia" />
+    <meta
+      property="og:description"
+      content="Before fancy functions. You once stood in the school maidan."
+    />
+    <meta property="og:url" content="https://15-august-nostalgia.vercel.app/" />
+    <meta property="og:image" content="https://15-august-nostalgia.vercel.app/og-image.png" />
+    <meta property="og:image:width" content="1376" />
+    <meta property="og:image:height" content="768" />
+    <meta property="og:image:alt" content="15 अगस्त school function nostalgia" />
+    <meta property="og:locale" content="en_IN" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="15 August Nostalgia" />
+    <meta
+      name="twitter:description"
+      content="Before fancy functions. You once stood in the school maidan."
+    />
+    <meta name="twitter:image" content="https://15-august-nostalgia.vercel.app/og-image.png" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -57,10 +88,21 @@
 
     <header class="topbar">
       <time id="clock" class="clock">—</time>
-      <div class="online" aria-live="polite">
-        <span class="dot"></span>
-        <span id="online-count">—</span>
-        <span class="muted">in the maidan</span>
+      <div class="top-actions">
+        <div class="online" aria-live="polite">
+          <span class="dot"></span>
+          <span id="online-count">—</span>
+          <span class="muted">in the maidan</span>
+        </div>
+        <button id="share" type="button" class="share" aria-label="Share">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="18" cy="5" r="3" />
+            <circle cx="6" cy="12" r="3" />
+            <circle cx="18" cy="19" r="3" />
+            <path d="M8.6 13.5 15.4 17.5M15.4 6.5 8.6 10.5" />
+          </svg>
+          <span>Share</span>
+        </button>
       </div>
     </header>
 

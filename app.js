@@ -91,6 +91,7 @@ const els = {
   iconPause: document.getElementById("icon-pause"),
   slotA: document.querySelector('[data-slot="a"]'),
   slotB: document.querySelector('[data-slot="b"]'),
+  share: document.getElementById("share"),
 };
 
 function tickClock() {
@@ -211,6 +212,33 @@ els.play.addEventListener("click", () => {
 
 els.prev.addEventListener("click", () => load(index - 1, true));
 els.next.addEventListener("click", () => load(index + 1, true));
+
+const SHARE_URL = "https://15-august-nostalgia.vercel.app/";
+const SHARE_TEXT =
+  "before fancy functions. you once stood in the school maidan.\n" +
+  SHARE_URL +
+  "\n#15August #IndependenceDay #Nostalgia #Tiranga";
+
+els.share.addEventListener("click", async () => {
+  const payload = { title: "15 August Nostalgia", text: SHARE_TEXT, url: SHARE_URL };
+  try {
+    if (navigator.share) {
+      await navigator.share(payload);
+      return;
+    }
+    await navigator.clipboard.writeText(SHARE_TEXT);
+    const label = els.share.querySelector("span");
+    const prev = label.textContent;
+    label.textContent = "Copied";
+    els.share.classList.add("is-copied");
+    setTimeout(() => {
+      label.textContent = prev;
+      els.share.classList.remove("is-copied");
+    }, 1600);
+  } catch {
+    /* user cancelled share */
+  }
+});
 
 els.seek.addEventListener("pointerdown", () => {
   seeking = true;
