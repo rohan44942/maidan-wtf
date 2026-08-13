@@ -3,6 +3,8 @@
   --green: #1f6b3a;
   --ink: #1a120c;
   --paper: #fff6ea;
+  --mood-top: rgba(8, 4, 16, 0.18);
+  --mood-bottom: rgba(4, 2, 10, 0.72);
 }
 
 * {
@@ -30,19 +32,64 @@ body {
   z-index: 0;
 }
 
-.hero img {
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.8s ease;
+}
+
+.slide.is-on {
+  opacity: 1;
+}
+
+.slide.is-photo .hero-wind {
+  display: none;
+}
+
+.fx {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.hero-still,
+.hero-wind {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 42%;
 }
 
+.hero-wind {
+  z-index: 1;
+  filter: url(#breeze);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 48%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 30%, transparent 48%);
+}
+
 .hero-shade {
   position: absolute;
   inset: 0;
+  z-index: 2;
+  pointer-events: none;
   background:
-    linear-gradient(to bottom, rgba(20, 12, 6, 0.28) 0%, transparent 28%, rgba(12, 8, 4, 0.55) 100%),
+    linear-gradient(to bottom, var(--mood-top) 0%, transparent 26%, var(--mood-bottom) 100%),
     radial-gradient(ellipse at 50% 40%, transparent 40%, rgba(0, 0, 0, 0.25) 100%);
+  transition: background 1.8s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-wind {
+    display: none;
+  }
+
+  .slide {
+    transition: none;
+  }
 }
 
 .topbar {
