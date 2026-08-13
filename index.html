@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Maidan — 15 August</title>
+    <meta
+      name="description"
+      content="Before fancy functions. You once stood in the school maidan. White uniforms. Girls dancing. The whole village watching."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Tiro+Devanagari+Hindi:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="hero" aria-hidden="true">
+      <img src="maidan.png" alt="" />
+      <div class="hero-shade"></div>
+    </div>
+
+    <header class="topbar">
+      <time id="clock" class="clock">—</time>
+      <div class="online" aria-live="polite">
+        <span class="dot"></span>
+        <span id="online-count">—</span>
+        <span class="muted">in the maidan</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="title-block">
+        <h1 class="sr-only">स्कूल मैदान — 15 August</h1>
+      </section>
+
+      <section class="player" aria-label="Patriotic playlist">
+        <div id="yt" class="yt"></div>
+
+        <div class="glass">
+          <img id="cover" class="cover" alt="" />
+          <div class="meta">
+            <p id="scene" class="scene"></p>
+            <p id="track-title" class="track-title"></p>
+            <p id="track-artist" class="track-artist"></p>
+            <input
+              id="seek"
+              class="seek"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              step="0.1"
+              aria-label="Seek"
+            />
+          </div>
+          <div class="controls">
+            <button id="prev" type="button" aria-label="Previous">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path d="M6 6h2v12H6zm3.5 6 8.5 6V6z" />
+              </svg>
+            </button>
+            <button id="play" type="button" class="play" aria-label="Play">
+              <svg id="icon-play" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              <svg id="icon-pause" class="hidden" viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                <path d="M6 5h4v14H6zm8 0h4v14h-4z" />
+              </svg>
+            </button>
+            <button id="next" type="button" aria-label="Next">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+                <path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <p class="credit">
+      songs play via YouTube. this is a memory, not a concert.
+    </p>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
